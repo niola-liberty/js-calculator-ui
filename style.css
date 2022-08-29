@@ -1,0 +1,178 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+   transition: all 0.5s ease;
+}
+body{
+    font-family: sans-serif;
+    background-image: linear-gradient(to right, rgba(79,51,176,1), rgb(210,53,165));
+    
+}
+
+a{
+    text-decoration: none;
+    color: #ffff;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+.cal{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px ;
+}
+.theme-toggle{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.theme-toggle.active::before{
+    background-color: #fff;
+}
+.theme-toggle::before{
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate((-50%, -50%));
+    border-radius: 50%;
+    color: var(--theme-bg);
+    z-index: -1;
+}
+#display{
+    margin: 0 10px;
+    height: 150px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+    color: var(--display-color);
+
+}
+#current-display{
+    position: absolute;
+    right: 10%;
+}
+#display::-webkit-scrollbar{
+    display: block;
+    height: 3px;
+}
+
+button{
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+button:hover{
+    transform: scale(1.15);
+}
+button#equal{
+    height: 130px;
+}
+.toggle-icon{
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
+    background-color: var(--theme-bg);
+    color: var(--theme-bg);
+}
+
+
+.theme-light{
+    --display-color: #000;
+    --btn-ac-bg: #ffd5d8;
+    --theme-bg: #2e1f39;
+    --background-color: #fff;
+    --color: #0a1e23;
+    --btn-bg-color: #ffd5d8;
+    --btn-color: #fc4552;
+    --btn-num-bg: #c3eaff;
+    --btn-num-color: #000;
+    --btn-op-bg: #ffd0fd;
+    --btn-op-color: #f067f3;
+    --btn-equal-bg: #adf9e7;
+    --btn-equal-color: #000; 
+}
+.theme-dark{
+    --display-color: #fff;
+    --btn-ac-bg: #9b4848e5;
+    --theme-bg: #fff;
+    --background-color: #071115;
+    --color: #0a1e23;
+    --btn-bg-color: #ffd5d8;
+    --btn-color: #fc4552;
+    --btn-num-bg: #1b2f38;
+    --btn-num-color: #f8fafb;
+    --btn-op-bg:  #2e1f39;
+    --btn-op-color:  #aa00a4;
+    --btn-equal-bg: #223323;
+    --btn-equal-color: #fff; 
+}
+
+.theme-toggle{
+    background-color: var(--theme-bg);
+}
+.cal{
+    background-color: var(--background-color);
+}
+.cal#display{
+    color: var(--color);
+}
+.cal button#clear{
+    background-color: var(--btn-ac-bg);
+    color: var(--btn-color);
+}
+.cal button.btn-number{
+    background-color:var(--btn-num-bg);
+    color: var(--btn-num-color);
+}
+.cal button.btn-operator{
+    background-color: var(--btn-op-bg);
+    color: var(--btn-op-color);
+}
+.cal button#equal{
+    background-color: var(--btn-equal-bg);
+    color: var(--btn-equal-color);
+}
+
+
+/*
+.cal.dark{
+    background-color: #071115;
+}
+.cal.dark button.btn-operation{
+    background-color: #2e1f39;
+    color: #aa00a4;
+}
+.cal.dark button.btn-equal{
+    background-color: #223323;
+    color: #fff;
+}
+.cal.dark button.btn-number{
+    background-color: #1b2f38;
+    color: #f8fafb;
+}
+*/
